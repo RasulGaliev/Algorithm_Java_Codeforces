@@ -13,9 +13,13 @@ public class dz1_C {
             array.add(scanner.nextInt());
         }
         Collections.sort(array);
-        int i;
-        for (i = 0; i < array.size() && i < k - 1; i++);
-        System.out.println(i == array.size() || array.get(i) != array.get(i + 1) ? array.get(i) : -1);
-
+        if (k < array.get(0) && array.get(0) == 1)
+            System.out.println(-1);
+        else if (k < array.get(0))
+            System.out.println(1);
+        else if (k == array.size() || array.get(k - 1) != array.get(k))
+            System.out.println(array.get(k - 1));
+        else
+            System.out.println(-1);
     }
 }
