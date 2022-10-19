@@ -18,8 +18,8 @@ public class dz1_C {
         else if (k == 0)
             System.out.println(1);
         else if (k == array.size())
-            System.out.println(array.get(k - 1) + 1);
-        else if(array.get(k - 1) != array.get(k))
+            System.out.println(array.get(k - 1));
+        else if(array.get(k - 1) < array.get(k))
             System.out.println(array.get(k - 1));
         else
             System.out.println(-1);
