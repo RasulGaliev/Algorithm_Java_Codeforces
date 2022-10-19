@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class dz1_A {
     public static void main(String[] args) {
@@ -12,23 +11,20 @@ public class dz1_A {
             a[i] = scanner.nextInt();
             b[i] = scanner.nextInt();
         }
-        int[] c = new int[n];
+        List<Integer> c = new ArrayList();
         for (int i = 0; i < n; i++) {
-            c[i] = a[i] - b[i];
+            c.add(a[i] - b[i]);
         }
-        Arrays.sort(c);
-        int sum = 0;
+        Collections.sort(c);
+        long sum = 0;
         for (int i = 0; i < n; i++) {
             sum += a[i];
         }
-        int count = -1;
-        for (int j = 0; j < n; j++) {
-            if (sum <= m) {
-                count = j;
-                break;
-            }
-            sum -= c[n - j - 1];
+        int count = 0;
+        for (int i = 0; i < n && sum > m; i++) {
+            count = i + 1;
+            sum -= c.get(n - i - 1);
         }
-        System.out.println(count);
+        System.out.println(sum > m ? -1 : count);
     }
 }
