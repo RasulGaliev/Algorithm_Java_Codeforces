@@ -19,10 +19,9 @@ public class dz1_E {
             for (j = 0, l = array.size() - 1; j < l; j++, l--) {
                 resultArray.add(array.get(l));
                 resultArray.add(array.get(j));
-
             }
             if (j == l)
-                resultArray.add(array.get(j + 1));
+                resultArray.add(array.get(j));
             for (int k = resultArray.size() - 1; k >= 0; k--){
                 System.out.print(resultArray.get(k) + " ");
             }
