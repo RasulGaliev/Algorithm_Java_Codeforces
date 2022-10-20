@@ -23,13 +23,13 @@ public class Task1649 {
                 if (j != maxIndex)
                     sum += array[j];
             }
-            int k;
-            if (array[maxIndex] - sum == 0 && sum == 0)
+            long k;
+            if (array[maxIndex] == 0 && sum == 0)
                 k = 0;
             else if (array[maxIndex] - sum < 1)
                 k = 1;
             else
-                k = (int)Math.ceil(array[maxIndex] - sum);
+                k = array[maxIndex] - sum;
             System.out.println(k);
         }
     }
