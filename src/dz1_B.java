@@ -17,7 +17,7 @@ public class dz1_B {
             }
             my_sort(x, y);
             if (checkSort(y)) {
-                System.out.println("YES");
+                System.out.println("\nYES");
                 for (int j = 0; j < size - 1; j++) {
                     for (int k = x[j]; k < x[j + 1]; k++) {
                         System.out.print('R');
@@ -27,7 +27,7 @@ public class dz1_B {
                     }
                 }
             } else {
-                System.out.print("NO");
+                System.out.print("\nNO");
             }
         }
     }
@@ -51,12 +51,8 @@ public class dz1_B {
         y[ind1] = y[ind2];
         y[ind2] = tmp;
     }
-    public static boolean checkSort(int[] array) {
-        int i;
-        for (i = 0; i < array.length - 2 && array[i] <= array[i + 1]; i++);
-        return i == array.length - 2 && array[i] < array[i + 1];
-    }
-    /* public static boolean checkSort(int[] array) {
+
+     public static boolean checkSort(int[] array) {
         boolean flag = true;
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
@@ -65,6 +61,6 @@ public class dz1_B {
             }
         }
         return flag;
-    }*/
+    }
 
 }
