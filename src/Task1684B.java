@@ -11,9 +11,9 @@ public class Task1684B {
         in_matrix(n, matrix, in);
         int[][] newMatrix = new int[n][3];
         for (int i = 0; i < n; i++) {
-            newMatrix[i][2] = matrix[i][2];
-            newMatrix[i][1] = matrix[i][1] + matrix[i][2];
-            newMatrix[i][0] = matrix[i][0] + matrix[i][1] + matrix[i][2];
+            newMatrix[i][2] = matrix[i][2]; // z = c
+            newMatrix[i][1] = matrix[i][2] + matrix[i][1]; // y = c + b
+            newMatrix[i][0] = matrix[i][2] + matrix[i][1] + matrix[i][0]; // x = = c + b + a
         }
         outMatrix(n, newMatrix);
     }
