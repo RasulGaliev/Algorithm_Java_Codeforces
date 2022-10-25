@@ -23,7 +23,6 @@ public class dz1_D {
             lists.add(list);
         }
 
-
         Map<Integer, Map<Integer, List<Integer>>> map = new TreeMap<>();
         boolean flag = false;
         for (int i = 0; i < k && !flag; i++) {
@@ -35,14 +34,14 @@ public class dz1_D {
                             if (elem.getValue().get(0) != j || elem.getValue().size() > 1) {
                                 int resultIndex1 = i + 1, resultIndex2 = elem.getKey() + 1;
                                 int resultElem1 = j + 1;
-                                int resultElem2 = (elem.getValue().get(0));
+                                int resultElem2 = (elem.getValue().get(0)) + 1;
                                 if (elem.getValue().get(0) == j)
                                     resultElem2 = (elem.getValue().get(1));
                                 flag = true;
-                                System.out.println("sum1 " + sums.get(i));
-                                System.out.println("sum2 " + sums.get(j));
-                                // System.out.println("a1 " + elem.getKey());
-                                System.out.println("num " + num);
+                                 // System.out.println("sum1 " + sums.get(i));
+                                 // System.out.println("sum2 " + sums.get(elem.getKey()));
+                                 // System.out.println("a1 " + elem.getKey());
+                                 // System.out.println("num " + num);
                                 System.out.println("YES");
                                 System.out.println(resultIndex1 + " " + resultElem1);
                                 System.out.println(resultIndex2 + " " + resultElem2 );
