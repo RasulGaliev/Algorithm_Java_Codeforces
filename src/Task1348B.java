@@ -8,31 +8,32 @@ public class Task1348B {
         Scanner scanner = new Scanner(System.in);
         int t = scanner.nextInt();
         Map<Integer, Integer> map;
+        LinkedList<Integer> list = new LinkedList<Integer>();
         int n, k, m;
         int elem;
-        int max = 0;
-        while (t-- > 0) {
+        int size = t;
+        while (size-- > 0) {
             n = scanner.nextInt();
             k = scanner.nextInt();
             map = new TreeMap<>();
             for (int i = 0; i < n; i++) {
                 elem = scanner.nextInt();
-                if (map.containsKey(elem))
-                    map.put(elem, map.get(elem) + 1);
+                list.add(elem);
+            }
+            for (int listElem : list) {
+                if (map.containsKey(listElem))
+                    map.put(listElem, map.get(listElem) + 1);
                 else {
-                    map.put(elem, 1);
-                }
-                if (map.get(elem) > max) {
-                    max = map.get(elem);
+                    map.put(listElem, 1);
                 }
             }
-            if (max <= map.size()) {
-                m = (int)Math.ceil((n * 1.0) / k) * k;
+            m = n * k;
+            System.out.println(k + " " + n);
+            if (k <= map.size()) {
                 System.out.println(m);
-                for (int i = 0; i < m;) {
+                for (int i = 0; i < n; i++) {
                     for (Map.Entry<Integer, Integer> mapElem : map.entrySet()) {
                         System.out.print(mapElem.getKey() + " ");
-                        i++;
                     }
                 }
                 System.out.println();
