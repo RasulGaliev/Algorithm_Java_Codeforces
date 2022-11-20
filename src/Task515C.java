@@ -8,30 +8,30 @@ public class Task515C {
         String a = scanner.next();
         BigInteger result = new BigInteger("1");
         for (int i = 0; i < n; i++) {
-            result.multiply(new BigInteger(result.toString(getFactorial(a.charAt(i) - 48))));
+            result = result.multiply(new BigInteger(Integer.toString(getFactorial(a.charAt(i) - 48))));
         }
         int count2 = 0;
         int count3 = 0;
         int count5 = 0;
         int count7 = 0;
         while (result.remainder(new BigInteger("2")).equals(new BigInteger("0"))) {
-                result.divide(new BigInteger("2"));
+                result = result.divide(new BigInteger("2"));
                 count2++;
         }
         while (result.remainder(new BigInteger("3")).equals(new BigInteger("0"))) {
-            result.divide(new BigInteger("3"));
+            result = result.divide(new BigInteger("3"));
             count2--;
             count3++;
         }
         while (result.remainder(new BigInteger("5")).equals(new BigInteger("0"))) {
-            result.divide(new BigInteger("5"));
+            result = result.divide(new BigInteger("5"));
             count3--;
             count2--;
             count2--;
             count5++;
         }
         while (result.remainder(new BigInteger("7")).equals(new BigInteger("0"))) {
-            result.divide(new BigInteger("7"));
+            result = result.divide(new BigInteger("7"));
             count5--;
             count3--;
             count7++;
