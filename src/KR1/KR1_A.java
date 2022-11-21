@@ -1,58 +1,45 @@
-package KR1;
+ package KR1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Scanner;
 
 public class KR1_A {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        int result = scanner.nextInt();
-        int newResult = result;
-        List<Integer> arrayResult = new ArrayList<>();
-        List<Integer> arrayNumber = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            arrayResult.add(0);
-            arrayNumber.add(0);
+        String number = scanner.next();
+        String result = scanner.next();
+        List<Character> listNumber = new ArrayList<>();
+        char min = 100;
+        int minI = 0;
+        char tmp;
+        for (int i = 0; i < number.length(); i++) {
+            tmp = number.charAt(i);
+            listNumber.add(tmp);
         }
-
-        int count = 0;
-        while (newResult != 0){
-            arrayResult.set(newResult % 10, arrayResult.get(newResult % 10) + 1);
-            newResult /= 10;
-            count++;
-        }
-        int min = 10;
-        int tmp;
-        while (number != 0){
-            tmp = number % 10;
-            if (tmp < min && tmp != 0)
+        Collections.sort(listNumber);
+        for (int i = 0; i < listNumber.size(); i++) {
+            tmp = listNumber.get(i);
+            if (tmp < min && tmp > '0') {
                 min = tmp;
-            arrayNumber.set(tmp, arrayNumber.get(tmp) + 1);
-            number /= 10;
+                minI = i;
+            }
         }
-
+        if(number.length() > 1 && listNumber.get(0) == '0'){
+            listNumber.set(0, listNumber.get(minI));
+            listNumber.set(minI, '0');
+        }
         boolean flag = true;
-        for (int i = 0; i < 10; i++) {
-            if (!arrayResult.equals(arrayNumber)) {
-                flag = false;
-                break;
-            }
-        }
-
-        while (result > 10) {
-            if (result % 10 < result / 10 % 10) {
-                flag = false;
-                break;
-            }
-            result /= 10;
-        }
-        if (count > 1 && result /                                                           10 % 10 != min)
+        if (listNumber.size() != result.length()){
             flag = false;
+        }
+        for (int i = 0; i < number.length() && flag; i++) {
+            if (listNumber.get(i) != result.charAt(i)) {
+                flag = false;
+            }
+        }
         System.out.println(flag ? "OK" : "WRONG_ANSWER");
-
     }
 
 }
