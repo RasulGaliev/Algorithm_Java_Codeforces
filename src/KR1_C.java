@@ -14,6 +14,7 @@ public class KR1_C {
             coordination.add(scanner.nextInt());
 
         k = m + n;
+        // List<Integer> status = new ArrayList<>();
         List<Integer> taxi = new ArrayList<>();
         List<Integer> client = new ArrayList<>();
         int tmp;
