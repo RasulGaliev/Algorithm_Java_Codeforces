@@ -10,7 +10,6 @@ public class Dz3_P {
             if (str1.charAt(i) != str2.charAt(i))
                 count++;
         }
-        char[] str = new char[str1.length()];
         if (count % 2 == 0) {
             for (int i = 0, j = 0; i < str1.length(); i++) {
                 if (str1.charAt(i) != str2.charAt(i) && j < count / 2) {
@@ -21,7 +20,5 @@ public class Dz3_P {
             }
         } else {
             System.out.println("impossible");
-        }
-        //System.out.println(str1.charAt(1));
-    }
+        }}
 }
