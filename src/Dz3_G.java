@@ -19,18 +19,11 @@ public class Dz3_G {
         boolean ye = false;
         boolean no = false;
         for (int i = 0; i < n; i++) {
-            if (list1.get(i) <= list2.get(i)){
+            if (list1.get(i) <= list2.get(i))
                 ye = true;
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            if (list1.get(i) >= list2.get(i)){
+            if (list1.get(i) >= list2.get(i))
                 no = true;
-            }
         }
-        if (!ye || !no)
-            System.out.println("YES");
-        else
-            System.out.println("NO");
+        System.out.println(!ye || !no ? "YES" : "NO");
     }
 }

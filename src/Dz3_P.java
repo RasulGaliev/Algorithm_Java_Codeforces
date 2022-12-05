@@ -16,9 +16,11 @@ public class Dz3_P {
                     System.out.print(str2.charAt(i));
                     j++;
                 } else {
-                    System.out.print(str1.charAt(i));                }
+                    System.out.print(str1.charAt(i));
+                }
             }
         } else {
             System.out.println("impossible");
-        }}
+        }
+    }
 }
