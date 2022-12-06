@@ -1,3 +1,5 @@
+package Dz3;
+
 import java.util.*;
 
 public class Dz3_D {
