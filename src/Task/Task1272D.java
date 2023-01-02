@@ -28,36 +28,4 @@ public class Task1272D {
 
     }
 }
-        /*Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int[] array = new int[n];
-        for (int i = 0; i < n; i++)
-            array[i] = scanner.nextInt();
-        int begin = 0;
-        int max = 0;
-        int del = 0;
-        for (int i = 1; i < n; i++) {
-            if (array[i] <= array[i - 1] && i != 1 && array[i] > array[i - 2]) {
-                if (del!= 0) {
-                    if (i - 1 - begin > max)
-                        max = i - 1 - begin;
-                    begin = del;
-                } else {
-                    begin++;
-                }
-                del = i;
-
-            } else if (array[i] <= array[i - 1]) {
-                if (del!= 0) {
-                    if (i - 1 - begin > max)
-                        max = i - 1 - begin;
-                }
-                begin = i;
-                del = 0;
-            }
-        }
-        if (max < n - begin)
-            max = n - begin;
-        System.out.println(max);
-    }*/
 
